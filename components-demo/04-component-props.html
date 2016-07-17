@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Vuejs</title>
+</head>
+<body>
+  <div id="el">
+    <child my-message="hello"></child>
+  </div>
+  <script src="../node_modules/vue/dist/vue.js" charset="utf-8"></script>
+  <script>
+
+    Vue.component('child',{
+      props: ['myMessage'],
+      template: '<div>{{myMessage}}</div>'
+    })
+
+    var vm = new Vue({
+      el: '#el'
+    })
+
+  </script>
+</body>
+</html>

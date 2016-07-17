@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Vuejs</title>
+</head>
+<body>
+  <div id="el">
+    <template id="child-template">
+      <input type="text" v-model="msg">
+      <button type="button" v-on:click="notify">Dispatch Event</button>
+    </template>
+    <div id="parent-template">
+      <pre>{{message | json}}</pre>
+      <child v-on:child-msg="handleIt"></child>
+    </div>
+  </div>
+  <script src="../node_modules/vue/dist/vue.js" charset="utf-8"></script>
+  <script>
+
+    Vue.component('child',{
+      template: '#child-template',
+      data: function(){
+        return {msg: 'hello'}
+      },
+      methods: {
+        notify: function(){
+          if(this.msg.trim()){
+            this.$dispatch('child-msg',this.msg)
+            this.msg = ''
+          }
+        }
+      }
+    })
+
+    var vm = new Vue({
+      el: '#parent-template',
+      data: {
+        message: []
+      },
+      events: {
+        // 'child-msg': function(msg){
+        //   this.message.push(msg)
+        // }
+      },
+      methods: {
+        handleIt: function(msg){
+          this.message.push(msg)
+        }
+      }
+    })
+
+  </script>
+</body>
+</html>

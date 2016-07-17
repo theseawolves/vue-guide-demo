@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Vuejs</title>
+</head>
+<body>
+  <div id="el">
+    <input type="text" v-model="parentMsg" />
+    <child :my-message="parentMsg" :prop-e="11" prop-g="hello"></child>
+  </div>
+  <script src="../node_modules/vue/dist/vue.js" charset="utf-8"></script>
+  <script>
+
+    Vue.component('child',{
+      props: {
+        propA: [Number],
+        propB: [String,Number],
+        propC: {
+          type: String,
+          twoWay: true
+        },
+        propC: {
+          type: Number,
+          default: 10
+        },
+        propD: {
+          type: Object,
+          default: function(){
+            return {msg: 'hello'}
+          }
+        },
+        propE: {
+          type: Number,
+          validator: function(val){
+            return val > 10
+          }
+        },
+        propF: {
+          coerce: function(val){
+            return val+''
+          }
+        },
+        propG: {
+          type: String,
+          required: true
+        }
+      },
+      template: '<div>{{myMessage}}</div>'
+    })
+
+    var vm = new Vue({
+      el: '#el',
+      data: {
+        parentMsg: ''
+      }
+    })
+
+  </script>
+</body>
+</html>
