@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Vuejs</title>
+</head>
+<body>
+  <div id="el">
+    <select v-model="selected">
+      <option value="A" selected>A</option>
+      <option value="B" >B</option>
+      <option value="C" >C</option>
+    </select>
+    <span>
+      selected: {{selected}}
+    </span>
+  </div>
+  <script src="../node_modules/vue/dist/vue.js" charset="utf-8"></script>
+  <script>
+    var vm = new Vue({
+      el: '#el',
+      data: {
+        selected:''
+      }
+    })
+
+  </script>
+</body>
+</html>

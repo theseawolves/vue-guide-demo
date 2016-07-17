@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Vuejs</title>
+</head>
+<body>
+  <div id="el">
+    <input type="checkbox" id="checkbox" v-model="checked" v-bind:true-value="a" v-bind:false-value="b">
+    <label for="checkbox">bindings</label>
+  </div>
+  <script src="../node_modules/vue/dist/vue.js" charset="utf-8"></script>
+  <script>
+    var vm = new Vue({
+      el: '#el',
+      data: {
+        checked: 'a',
+        a: 'a',
+        b: 'b'
+      }
+    })
+
+  </script>
+</body>
+</html>
