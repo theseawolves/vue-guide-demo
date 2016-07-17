@@ -1,0 +1,29 @@
+{
+  "name": "vue-guide-demo",
+  "version": "1.0.0",
+  "description": "demo from vuejs.org/guide",
+  "main": "index.js",
+  "scripts": {
+    "serve": "serve -p 8080",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/theseawolves/vue-guide-demo.git"
+  },
+  "keywords": [
+    "vuejs"
+  ],
+  "author": "theseawolves",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/theseawolves/vue-guide-demo/issues"
+  },
+  "homepage": "https://github.com/theseawolves/vue-guide-demo#readme",
+  "dependencies": {
+    "vue": "^1.0.26"
+  },
+  "devDependencies": {
+    "serve": "^1.4.0"
+  }
+}

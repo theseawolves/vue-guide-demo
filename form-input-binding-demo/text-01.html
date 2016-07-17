@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Vuejs</title>
+  </head>
+  <body>
+    <div id="el">
+      <span>message is {{message}}</span>
+      <br>
+      <input type="text" v-model="message" placeholder="edit me"/>
+    </div>
+    <script src="../node_modules/vue/dist/vue.js" charset="utf-8"></script>
+    <script>
+      var vm = new Vue({
+        el: '#el',
+        data: {
+          message: ''
+        }
+      })
+
+    </script>
+  </body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Vuejs</title>
+</head>
+<body>
+  <div id="el">
+    <input type="radio" :id="names[0]" :value="names[0]" v-model="checked">
+    <label :for="names[0]">{{names[0]}}</label>
+    <input type="radio" :id="names[1]" :value="names[1]" v-model="checked">
+    <label :for="names[1]">{{names[1]}}</label>
+    <input type="radio" :id="names[2]" :value="names[2]" v-model="checked">
+    <label :for="names[2]">{{names[2]}}</label>
+    <pre>
+      {{checked | json}}
+    </pre>
+  </div>
+  <script src="../node_modules/vue/dist/vue.js" charset="utf-8"></script>
+  <script>
+    var vm = new Vue({
+      el: '#el',
+      data: {
+        checked: 'jack',
+        names:['jack','john','mike']
+      }
+    })
+
+  </script>
+</body>
+</html>

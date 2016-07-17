@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Vuejs</title>
+</head>
+<body>
+  <div id="el">
+    <input type="checkbox" :id="jack" :value="jack" v-model="checkedNames">
+    <label :for="jack">{{jack}}</label>
+    <input type="checkbox" :id="john" :value="john" v-model="checkedNames">
+    <label :for="john">{{john}}</label>
+    <input type="checkbox" :id="mike" :value="mike" v-model="checkedNames">
+    <label :for="mike">{{mike}}</label>
+    <pre>
+      {{checkedNames | json}}
+    </pre>
+  </div>
+  <script src="../node_modules/vue/dist/vue.js" charset="utf-8"></script>
+  <script>
+    var vm = new Vue({
+      el: '#el',
+      data: {
+        checkedNames: [],
+        jack: 'jack',
+        john: 'john',
+        mike: 'mike'
+      }
+    })
+
+  </script>
+</body>
+</html>

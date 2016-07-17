@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div id="el">
+    <span>message is {{message}}</span>
+    <br>
+    <textarea v-model="message"></textarea>
+  </div>
+  <script src="../node_modules/vue/dist/vue.js" charset="utf-8"></script>
+  <script>
+    var vm = new Vue({
+      el: '#el',
+      data: {
+        message: ''
+      }
+    })
+
+  </script>
+</body>
+</html>
