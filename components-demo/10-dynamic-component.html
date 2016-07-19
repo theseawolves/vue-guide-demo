@@ -8,7 +8,7 @@
 </head>
 <body>
   <div id="el">
-    <component :is="currentView"></component>
+    <component :is="currentView" :msg="msg"></component>
   </div>
   <script src="../node_modules/vue/dist/vue.js" charset="utf-8"></script>
   <script>
@@ -16,14 +16,18 @@
     var vm = new Vue({
       el: '#el',
       data: {
-        currentView: 'home'
+        currentView: 'home',
+        msg: 'hello'
       },
       components: {
         home: {
           template: '<div>home</div>'
         },
         posts: {
-          template: '<div>posts</div>'
+          props:{
+            msg:[String]
+          },
+          template: '<div>{{msg}}</div>'
         },
         archive: {
           template: '<div>archive</div>'
