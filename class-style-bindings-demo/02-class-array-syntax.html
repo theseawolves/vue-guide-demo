@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>VueJS</title>
+</head>
+<body>
+  <div id="el">
+    <div v-bind:class="[classA, classB]">array</div>
+    <div v-bind:class="[classA, isB ? classB : '']">condition</div>
+    <div v-bind:class="[classA, { classB: isB, classC: isC }]">mixin</div>
+  </div>
+  <script src="../node_modules/vue/dist/vue.js" charset="utf-8"></script>
+  <script>
+     var vm = new Vue({
+       el: '#el',
+       data: {
+         classA: 'class-a',
+         classB: 'class-b',
+         isB: false,
+         isC: true
+       }
+     })
+
+  </script>
+</body>
+
+</html>
