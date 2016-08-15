@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>VueJS</title>
+</head>
+<body>
+  <div id="el">
+    <div>{{firstName}}</div>
+    <div>{{lastName}}</div>
+    <div>{{fullName}}</div>
+  </div>
+  <div id="demo">
+    <div>{{firstName2}}</div>
+    <div>{{lastName2}}</div>
+    <div>{{fullName2}}</div>
+  </div>
+  <script src="../node_modules/vue/dist/vue.js" charset="utf-8"></script>
+  <script>
+  var vm = new Vue({
+    el: '#el',
+    data: {
+      firstName: 'Foo',
+      lastName: 'Bar'
+    },
+    computed: {
+      fullName: {
+        // getter
+        get: function () {
+          return this.firstName + ' ' + this.lastName
+        },
+        // setter
+        set: function (newValue) {
+          var names = newValue.split(' ')
+          this.firstName = names[0]
+          this.lastName = names[names.length - 1]
+        }
+      }
+    }
+  })
+
+  vm.fullName = 'John Doe'
+
+  var vm2 = new Vue({
+    el: '#demo',
+    data: {
+      firstName2: 'Foo',
+      lastName2: 'Bar'
+    },
+    computed: {
+      fullName2: function () {
+        return this.firstName2 + ' ' + this.lastName2
+      }
+    },
+    ready: function(){
+      this.fullName2 = 'Evan You'        
+    }
+  })
+
+
+
+  </script>
+</body>
+
+</html>

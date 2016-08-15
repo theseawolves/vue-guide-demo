@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>VueJS</title>
+</head>
+<body>
+  <div id="el">
+    <div id="example">
+      a={{ a }}, b={{ b }}
+    </div>
+  </div>
+  <script src="../node_modules/vue/dist/vue.js" charset="utf-8"></script>
+  <script>
+     var vm = new Vue({
+       el: '#el',
+       data: {
+         a: 1
+       },
+       computed: {
+         // a computed getter
+         b: function () {
+           // `this` points to the vm instance
+           return this.a + 1
+         }
+       }
+     })
+
+  </script>
+</body>
+
+</html>
